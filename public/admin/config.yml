@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: settings
+    label: Site Settings
+    files:
+      - name: general
+        label: General Info
+        file: src/content/settings.json
+        fields:
+          - { label: Business Phone, name: phone, widget: string, hint: "Include area code, e.g. (281) 555-0142" }
+          - { label: Business Email, name: email, widget: string }
+          - { label: License Number, name: license, widget: string }
+          - { label: Address, name: address, widget: string }
+          - { label: City / State / ZIP, name: cityStateZip, widget: string }
+          - { label: Facebook URL, name: facebook, widget: string, required: false }
+          - { label: Instagram URL, name: instagram, widget: string, required: false }
+
+      - name: hero
+        label: Hero Section
+        file: src/content/hero.json
+        fields:
+          - { label: Eyebrow Text, name: eyebrow, widget: string }
+          - { label: Headline (before orange word), name: headlineBefore, widget: string }
+          - { label: Headline Orange Word, name: headlineAccent, widget: string }
+          - { label: Lead Paragraph, name: lead, widget: text }
+          - { label: Review Count, name: reviewCount, widget: string, hint: "e.g. 1,200+" }
+          - { label: Years in Business, name: years, widget: string, hint: "e.g. 15 yrs" }
+
+      - name: plans
+        label: Maintenance Plans
+        file: src/content/plans.json
+        fields:
+          - label: Tune-Up Plan
+            name: tuneup
+            widget: object
+            fields:
+              - { label: Price, name: price, widget: string, hint: "e.g. $89" }
+              - { label: Per, name: per, widget: string, hint: "e.g. / visit" }
+              - { label: Subtitle, name: subtitle, widget: string }
+          - label: Comfort Club Plan
+            name: comfort
+            widget: object
+            fields:
+              - { label: Price, name: price, widget: string, hint: "e.g. $19" }
+              - { label: Per, name: per, widget: string, hint: "e.g. / month" }
+              - { label: Subtitle, name: subtitle, widget: string }
+          - label: Total Care Plan
+            name: totalcare
+            widget: object
+            fields:
+              - { label: Price, name: price, widget: string, hint: "e.g. $34" }
+              - { label: Per, name: per, widget: string, hint: "e.g. / month" }
+              - { label: Subtitle, name: subtitle, widget: string }

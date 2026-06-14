@@ -1,0 +1,50 @@
+/* TigerTex Air — Color tokens
+   Cool Comfort: deep navy ink, cool blue primary (the "air"),
+   signal orange as the heat/CTA accent, ice-blue surfaces. */
+:root {
+  /* ── Base palette ── */
+  --navy-900: #0c1a30;   /* darkest — footer/CTA bands */
+  --navy-800: #0f1f3a;   /* primary ink */
+  --navy-700: #1a3253;
+  --slate-500: #5b6b82;  /* secondary text */
+  --slate-400: #8493a8;  /* muted text */
+
+  --blue-700: #1d4ed8;   /* primary pressed */
+  --blue-600: #2563eb;   /* primary brand — "cool/air" */
+  --blue-100: #e6f0ff;   /* blue tint surface */
+  --blue-50:  #f0f6ff;
+
+  --orange-600: #e8460c; /* heat pressed */
+  --orange-500: #ff5a1f; /* heat accent / CTA */
+  --orange-100: #ffe7dc; /* heat tint */
+
+  --ice-100: #f4f8fc;    /* page background */
+  --white:    #ffffff;
+  --line-200: #dbe6f2;   /* hairline borders */
+  --line-300: #c5d5e8;
+
+  --green-600: #1f9d57;  /* success / available */
+  --amber-500: #f5a623;  /* rating stars */
+  --red-600:   #dc3545;  /* error */
+
+  /* ── Semantic aliases ── */
+  --bg-page: var(--ice-100);
+  --bg-dark: var(--navy-900);
+  --surface-card: var(--white);
+  --surface-tint: var(--blue-50);
+
+  --text-strong: var(--navy-800);
+  --text-body: #2b3a52;
+  --text-muted: var(--slate-500);
+  --text-on-dark: #e8f0fa;
+  --text-on-accent: #ffffff;
+
+  --brand-primary: var(--blue-600);
+  --brand-primary-hover: var(--blue-700);
+  --accent-heat: var(--orange-500);
+  --accent-heat-hover: var(--orange-600);
+
+  --border: var(--line-200);
+  --border-strong: var(--line-300);
+  --focus-ring: rgba(37, 99, 235, .35);
+}

@@ -1,0 +1,17 @@
+{
+  "tuneup": {
+    "price": "$89",
+    "per": "/ visit",
+    "subtitle": "One-time precision tune-up for a single system."
+  },
+  "comfort": {
+    "price": "$19",
+    "per": "/ month",
+    "subtitle": "Two tune-ups a year + member perks. Our most popular plan."
+  },
+  "totalcare": {
+    "price": "$34",
+    "per": "/ month",
+    "subtitle": "Whole-home coverage for multi-system households."
+  }
+}

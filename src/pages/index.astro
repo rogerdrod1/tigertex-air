@@ -1,0 +1,568 @@
+---
+import '../global.css';
+import settings from '../content/settings.json';
+import hero from '../content/hero.json';
+import plans from '../content/plans.json';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TigerTex Air — Heating &amp; Cooling · Katy, TX</title>
+  <meta name="description" content="Honest HVAC service for Katy &amp; West Houston. Same-day AC repair, installation, heating, and maintenance plans. Licensed, insured, locally owned." />
+
+  <link rel="canonical" href="https://www.tigertexair.com/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tigertexair.com/" />
+  <meta property="og:title" content="TigerTex Air — Heating &amp; Cooling · Katy, TX" />
+  <meta property="og:description" content="Honest HVAC service for Katy &amp; West Houston. Same-day AC repair, installation, heating, and maintenance plans. Licensed, insured, locally owned." />
+  <meta property="og:site_name" content="TigerTex Air" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TigerTex Air — HVAC · Katy, TX" />
+  <meta name="twitter:description" content="Same-day AC repair, installation, and maintenance plans. Serving Katy &amp; West Houston. Licensed, insured, locally owned." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+
+  <!-- Schema.org: LocalBusiness + HVACContractor -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "HVACBusiness"],
+    "name": "TigerTex Air LLC",
+    "description": "Licensed HVAC contractor serving Katy and West Houston. Specializing in AC repair, AC installation, heating, furnace repair, and indoor air quality.",
+    "url": "https://www.tigertexair.com",
+    "telephone": "+12815550142",
+    "email": "hello@tigertexair.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Katy",
+      "addressRegion": "TX",
+      "postalCode": "77494",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 29.7858, "longitude": -95.8245 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Katy" },
+      { "@type": "City", "name": "Cinco Ranch" },
+      { "@type": "City", "name": "Fulshear" },
+      { "@type": "City", "name": "Richmond" },
+      { "@type": "City", "name": "Sugar Land" },
+      { "@type": "City", "name": "Brookshire" }
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1200", "bestRating": "5" },
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How quickly can TigerTex Air respond to an AC repair?", "acceptedAnswer": { "@type": "Answer", "text": "TigerTex Air offers same-day service for calls placed before noon across Katy and West Houston. For emergencies, we are available 24/7." } },
+      { "@type": "Question", "name": "What areas does TigerTex Air serve?", "acceptedAnswer": { "@type": "Answer", "text": "We serve Katy, Cinco Ranch, Fulshear, Richmond, Sugar Land, Brookshire, Fort Bend County, and West Houston, TX." } },
+      { "@type": "Question", "name": "Is TigerTex Air licensed and insured in Texas?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. TigerTex Air LLC holds a valid Texas HVAC contractor license (TACLB) and is fully insured." } },
+      { "@type": "Question", "name": "How much does an AC tune-up cost?", "acceptedAnswer": { "@type": "Answer", "text": "A one-time AC tune-up starts at $89 and includes a 21-point system inspection, coil and drain line cleaning, refrigerant and airflow check, and a written health report." } },
+      { "@type": "Question", "name": "Does TigerTex Air offer financing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. TigerTex Air offers 0% financing options on qualifying equipment installations." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ══════════ ANNOUNCEMENT BAR ══════════ -->
+<div class="announce">
+  <div class="container">
+    <div class="announce-left">
+      <span class="dot"></span>
+      <span>Same-day service available · Serving Katy &amp; West Houston</span>
+    </div>
+    <div class="announce-right">
+      <span class="area-text">License #{settings.license}</span>
+      <a href={`tel:+1${settings.phone.replace(/\D/g,'')}`}><i data-lucide="phone"></i> {settings.phone}</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="header">
+  <div class="container">
+    <a href="#top" class="logo" aria-label="TigerTex Air home">
+      <span class="logo-mark"><i data-lucide="wind"></i></span>
+      <span class="logo-text">TigerTex<b>Air</b></span>
+    </a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#plans">Plans</a>
+      <a href="#area">Service Area</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="header-cta">
+      <a href={`tel:+1${settings.phone.replace(/\D/g,'')}`} class="header-phone"><i data-lucide="phone-call"></i> {settings.phone}</a>
+      <button class="btn btn-heat" data-book="">Book Service</button>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ MOBILE NAV ══════════ -->
+<div class="mobile-nav">
+  <a href="#services">Services</a>
+  <a href="#why">Why Us</a>
+  <a href="#plans">Plans</a>
+  <a href="#area">Service Area</a>
+  <a href="#reviews">Reviews</a>
+  <button class="btn btn-heat btn-lg btn-block" data-book="">Book Service</button>
+  <a href={`tel:+1${settings.phone.replace(/\D/g,'')}`} class="btn btn-ghost btn-lg btn-block" style="margin-top:10px"><i data-lucide="phone"></i> {settings.phone}</a>
+</div>
+
+<main id="top">
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">{hero.eyebrow}</span>
+        <h1>{hero.headlineBefore} <span class="heat">{hero.headlineAccent}</span></h1>
+        <p class="hero-lead">{hero.lead}</p>
+        <div class="hero-actions">
+          <button class="btn btn-heat btn-lg" data-book=""><i data-lucide="calendar-check"></i> Book a service</button>
+          <a href={`tel:+1${settings.phone.replace(/\D/g,'')}`} class="btn btn-ghost btn-lg"><i data-lucide="phone"></i> {settings.phone}</a>
+        </div>
+        <div class="hero-trust">
+          <div class="stat">
+            <span class="stars" aria-label="4.9 out of 5 stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </span>
+            <b style="margin-top:6px">4.9/5</b>
+            <span>{hero.reviewCount} local reviews</span>
+          </div>
+          <div class="stat"><b>{hero.years}</b><span>serving West Houston</span></div>
+          <div class="stat"><b>Same-day</b><span>repairs &amp; diagnostics</span></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-img-slot">
+          <img src="/hero-placeholder.svg" alt="TigerTex Air technician" width="640" height="460" />
+        </div>
+        <div class="hero-float">
+          <div class="hf-head">
+            <span class="hf-label">Live system</span>
+            <span class="hf-live"><span class="dot"></span> Online</span>
+          </div>
+          <div class="hf-readout">
+            <div class="hf-cell"><div class="k">SET</div><div class="v set">72°</div></div>
+            <div class="hf-cell"><div class="k">INDOOR</div><div class="v in">68°</div></div>
+            <div class="hf-cell"><div class="k">RUNTIME</div><div class="v">94%</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ TRUST STRIP ══════════ -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-item"><i data-lucide="badge-check"></i> Licensed &amp; Insured (TACLB)</div>
+      <div class="trust-item"><i data-lucide="map-pin"></i> Locally Owned in Katy</div>
+      <div class="trust-item"><i data-lucide="credit-card"></i> 0% Financing Available</div>
+      <div class="trust-item"><i data-lucide="shield-check"></i> 100% Satisfaction Guarantee</div>
+      <div class="trust-item"><i data-lucide="clock"></i> 24/7 Emergency Service</div>
+    </div>
+  </div>
+
+  <!-- ══════════ SERVICES ══════════ -->
+  <section id="services" class="sec">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>Full-service heating &amp; cooling, done precisely.</h2>
+        <p>From a quick repair to a whole-home system swap, our techs diagnose with instruments — not guesses.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card reveal">
+          <div class="svc-icon"><i data-lucide="snowflake"></i></div>
+          <h3>AC Repair</h3>
+          <p>Cooling out in the Texas heat? We diagnose fast and fix it the same day — most parts on the truck.</p>
+          <a href="#" class="svc-link" data-book="AC Repair">Get it fixed <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon"><i data-lucide="thermometer-snowflake"></i></div>
+          <h3>AC Installation</h3>
+          <p>Right-sized, high-efficiency systems with a load calculation — not a one-size-fits-all upsell.</p>
+          <a href="#" class="svc-link" data-book="AC Installation">Free estimate <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon"><i data-lucide="flame"></i></div>
+          <h3>Heating &amp; Furnace</h3>
+          <p>Furnace and heat-pump repair, tune-ups, and installs to keep you warm through every cold snap.</p>
+          <a href="#" class="svc-link" data-book="Heating &amp; Furnace">Learn more <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon"><i data-lucide="calendar-clock"></i></div>
+          <h3>Maintenance Plans</h3>
+          <p>Twice-a-year tune-ups, priority scheduling, and member pricing that pays for itself.</p>
+          <a href="#plans" class="svc-link">See plans <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon"><i data-lucide="wind"></i></div>
+          <h3>Indoor Air Quality</h3>
+          <p>Filtration, UV purifiers, and humidity control for cleaner, healthier air in every room.</p>
+          <a href="#" class="svc-link" data-book="Indoor Air Quality">Learn more <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon"><i data-lucide="building-2"></i></div>
+          <h3>Commercial HVAC</h3>
+          <p>Light-commercial service and maintenance for offices, retail, and small facilities across the area.</p>
+          <a href="#" class="svc-link" data-book="Commercial HVAC">Talk to us <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ VALUE PROPS ══════════ -->
+  <section id="why" class="sec values">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow on-dark">Why TigerTex</span>
+        <h2>Engineered comfort, honest service.</h2>
+        <p>We treat your home like a system. That means precise diagnostics, clear pricing, and work that holds up.</p>
+      </div>
+      <div class="val-grid">
+        <div class="val-card reveal">
+          <div class="val-icon"><i data-lucide="zap"></i></div>
+          <h3>Same-day service</h3>
+          <p>Book before noon and we'll be out today across Katy and West Houston.</p>
+        </div>
+        <div class="val-card reveal">
+          <div class="val-icon"><i data-lucide="receipt-text"></i></div>
+          <h3>Upfront pricing</h3>
+          <p>Flat-rate quotes approved before we start. No surprises on the invoice.</p>
+        </div>
+        <div class="val-card reveal">
+          <div class="val-icon"><i data-lucide="graduation-cap"></i></div>
+          <h3>Licensed Texas techs</h3>
+          <p>Background-checked, NATE-certified, and trained on every major brand.</p>
+        </div>
+        <div class="val-card reveal">
+          <div class="val-icon"><i data-lucide="shield-check"></i></div>
+          <h3>Satisfaction guarantee</h3>
+          <p>If it's not right, we make it right — or you don't pay for the repair.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PROCESS ══════════ -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>Three steps to comfort.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-bar"></div>
+          <div class="step-num">STEP 01</div>
+          <h3>Book in 60 seconds</h3>
+          <p>Pick a service and a time online, or call us. You'll get a confirmed window — not a vague "sometime today."</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-bar"></div>
+          <div class="step-num">STEP 02</div>
+          <h3>We diagnose precisely</h3>
+          <p>Your tech tests the full system with instruments, then walks you through findings and a flat-rate quote.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-bar"></div>
+          <div class="step-num">STEP 03</div>
+          <h3>Fixed right, first time</h3>
+          <p>Approve the quote and we get to work — most repairs done same-visit, backed by our guarantee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PLANS ══════════ -->
+  <section id="plans" class="sec plans">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Maintenance plans</span>
+        <h2>Stay ahead of breakdowns.</h2>
+        <p>Routine tune-ups catch small issues before they become 100° emergencies.</p>
+      </div>
+      <div class="plan-grid">
+        <div class="plan reveal">
+          <div class="plan-name">Tune-Up</div>
+          <div class="plan-price"><span class="amt">{plans.tuneup.price}</span><span class="per">{plans.tuneup.per}</span></div>
+          <p class="plan-sub">{plans.tuneup.subtitle}</p>
+          <ul>
+            <li><i data-lucide="check"></i> 21-point system inspection</li>
+            <li><i data-lucide="check"></i> Coil &amp; drain line cleaning</li>
+            <li><i data-lucide="check"></i> Refrigerant &amp; airflow check</li>
+            <li><i data-lucide="check"></i> Written health report</li>
+          </ul>
+          <button class="btn btn-ghost btn-block" data-book="AC Tune-Up">Book a tune-up</button>
+        </div>
+        <div class="plan featured reveal">
+          <div class="plan-name">Comfort Club</div>
+          <div class="plan-price"><span class="amt">{plans.comfort.price}</span><span class="per">{plans.comfort.per}</span></div>
+          <p class="plan-sub">{plans.comfort.subtitle}</p>
+          <ul>
+            <li><i data-lucide="check"></i> Spring &amp; fall tune-ups</li>
+            <li><i data-lucide="check"></i> Priority same-day scheduling</li>
+            <li><i data-lucide="check"></i> 15% off all repairs</li>
+            <li><i data-lucide="check"></i> No after-hours fees</li>
+          </ul>
+          <button class="btn btn-heat btn-block" data-book="Comfort Club Membership">Join Comfort Club</button>
+        </div>
+        <div class="plan reveal">
+          <div class="plan-name">Total Care</div>
+          <div class="plan-price"><span class="amt">{plans.totalcare.price}</span><span class="per">{plans.totalcare.per}</span></div>
+          <p class="plan-sub">{plans.totalcare.subtitle}</p>
+          <ul>
+            <li><i data-lucide="check"></i> Everything in Comfort Club</li>
+            <li><i data-lucide="check"></i> Up to 2 systems covered</li>
+            <li><i data-lucide="check"></i> 20% off repairs &amp; IAQ</li>
+            <li><i data-lucide="check"></i> Annual IAQ inspection</li>
+          </ul>
+          <button class="btn btn-ghost btn-block" data-book="Total Care Membership">Get Total Care</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICE AREA ══════════ -->
+  <section id="area" class="sec area">
+    <div class="container area-grid">
+      <div class="reveal">
+        <span class="eyebrow">Service area</span>
+        <h2 style="font-size:var(--fs-h2);margin-top:14px">Proudly serving Katy &amp; West Houston.</h2>
+        <p style="color:var(--text-muted);margin-top:14px">Locally owned and operated — our trucks are never far. If you're nearby and don't see your neighborhood, give us a call.</p>
+        <div class="area-chips">
+          <span class="chip"><i data-lucide="map-pin"></i> Katy</span>
+          <span class="chip"><i data-lucide="map-pin"></i> Cinco Ranch</span>
+          <span class="chip"><i data-lucide="map-pin"></i> Fulshear</span>
+          <span class="chip"><i data-lucide="map-pin"></i> Richmond</span>
+          <span class="chip"><i data-lucide="map-pin"></i> Sugar Land</span>
+          <span class="chip"><i data-lucide="map-pin"></i> Brookshire</span>
+          <span class="chip"><i data-lucide="map-pin"></i> Fort Bend</span>
+          <span class="chip"><i data-lucide="map-pin"></i> West Houston</span>
+        </div>
+        <div style="margin-top:28px">
+          <button class="btn btn-primary" data-book=""><i data-lucide="calendar-check"></i> Check availability</button>
+        </div>
+      </div>
+      <div class="area-map reveal">
+        <img src="/map-placeholder.svg" alt="TigerTex Air service area map — Katy and West Houston" width="560" height="360" style="width:100%;height:360px;object-fit:cover;border-radius:var(--radius-xl)" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ REVIEWS ══════════ -->
+  <section id="reviews" class="sec">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">From the neighborhood</span>
+        <h2>Texas homeowners trust TigerTex.</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review reveal">
+          <span class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></span>
+          <p>"AC died on the hottest day of July. TigerTex had a tech out within three hours and cooling again before dinner. Fair price, no upsell."</p>
+          <div class="review-by">
+            <div class="review-av">DM</div>
+            <div><b>Dana M.</b><span>Cinco Ranch</span></div>
+          </div>
+        </div>
+        <div class="review reveal">
+          <span class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></span>
+          <p>"They actually did a load calculation before quoting a new system. The first company just guessed. Install was clean and on time."</p>
+          <div class="review-by">
+            <div class="review-av">RT</div>
+            <div><b>Raymond T.</b><span>Fulshear</span></div>
+          </div>
+        </div>
+        <div class="review reveal">
+          <span class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></span>
+          <p>"Comfort Club membership is worth every penny. Priority scheduling got me in same-day and the tune-up caught a failing capacitor early."</p>
+          <div class="review-by">
+            <div class="review-av">LP</div>
+            <div><b>Leticia P.</b><span>Katy</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA BAND ══════════ -->
+  <section class="cta-band">
+    <div class="container">
+      <span class="eyebrow on-dark" style="justify-content:center">Don't sweat it</span>
+      <h2 style="margin-top:14px">Texas heat won't wait. Neither do we.</h2>
+      <p>Book online in under a minute, or call for 24/7 emergency service across Katy and West Houston.</p>
+      <div class="cta-actions">
+        <button class="btn btn-heat btn-lg" data-book=""><i data-lucide="calendar-check"></i> Book a service</button>
+        <a href={`tel:+1${settings.phone.replace(/\D/g,'')}`} class="btn btn-ghost btn-lg on-dark"><i data-lucide="phone"></i> {settings.phone}</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo on-dark">
+          <span class="logo-mark"><i data-lucide="wind"></i></span>
+          <span class="logo-text">TigerTex<b>Air</b></span>
+        </a>
+        <p>Honest heating &amp; cooling for Katy &amp; West Houston. Locally owned, Texas licensed, available 24/7.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">AC Repair</a></li>
+          <li><a href="#services">AC Installation</a></li>
+          <li><a href="#services">Heating &amp; Furnace</a></li>
+          <li><a href="#services">Indoor Air Quality</a></li>
+          <li><a href="#plans">Maintenance Plans</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Why TigerTex</a></li>
+          <li><a href="#area">Service Area</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#" data-book="">Book Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li class="row"><i data-lucide="phone"></i> {settings.phone}</li>
+          <li class="row"><i data-lucide="mail"></i> {settings.email}</li>
+          <li class="row"><i data-lucide="map-pin"></i> {settings.cityStateZip}</li>
+          <li class="row"><i data-lucide="clock"></i> 24/7 Emergency Service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© {new Date().getFullYear()} TigerTex Air LLC · License #{settings.license} · All rights reserved.</small>
+      <div class="footer-social">
+        <a href={settings.facebook} aria-label="Facebook" target="_blank" rel="noopener"><i data-lucide="facebook"></i></a>
+        <a href={settings.instagram} aria-label="Instagram" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
+        <a href="#reviews" aria-label="Google reviews"><i data-lucide="star"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ BOOKING MODAL (Netlify Forms) ══════════ -->
+<div class="modal-overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+    <div id="booking-body">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">Book service</span>
+          <h3 id="booking-title">Request your appointment</h3>
+          <p>Tell us what's going on — we'll confirm your window by text.</p>
+        </div>
+        <button class="modal-close" data-close aria-label="Close"><i data-lucide="x"></i></button>
+      </div>
+      <!-- data-netlify="true" registers this form with Netlify at build time -->
+      <form
+        id="booking-form"
+        class="modal-body"
+        name="booking"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="booking" />
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <div class="field-row">
+          <div class="field"><label for="f-first">First name</label><input id="f-first" type="text" name="first" required placeholder="Jane" /></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="phone" required placeholder="(281) 555-0000" /></div>
+        </div>
+        <div class="field">
+          <label for="f-service">Service needed</label>
+          <select id="f-service" name="service">
+            <option>AC Repair</option>
+            <option>AC Installation</option>
+            <option>Heating &amp; Furnace</option>
+            <option>Indoor Air Quality</option>
+            <option>AC Tune-Up</option>
+            <option>Comfort Club Membership</option>
+            <option>Total Care Membership</option>
+            <option>Commercial HVAC</option>
+            <option>Not sure — please advise</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="f-zip">ZIP code</label><input id="f-zip" type="text" name="zip" required placeholder="77494" /></div>
+          <div class="field"><label for="f-date">Preferred date</label><input id="f-date" type="date" name="date" /></div>
+        </div>
+        <button type="submit" class="btn btn-heat btn-lg btn-block" style="margin-top:6px">
+          <i data-lucide="calendar-check"></i> Request appointment
+        </button>
+        <p style="font-size:var(--fs-xs);color:var(--text-muted);text-align:center;margin-top:8px">
+          Or call <a href={`tel:+1${settings.phone.replace(/\D/g,'')}`} style="color:var(--brand-primary);font-weight:600">{settings.phone}</a> for 24/7 emergencies.
+        </p>
+      </form>
+    </div>
+    <div id="booking-success" class="modal-success" style="display:none">
+      <div class="ok"><i data-lucide="check"></i></div>
+      <h3>Request received!</h3>
+      <p>Thanks — a TigerTex dispatcher will text you within 15 minutes to confirm your appointment window.</p>
+      <button class="btn btn-ghost" data-close style="margin-top:22px">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hero image placeholder styles -->
+<style>
+  .hero-img-slot {
+    width: 100%;
+    height: 460px;
+    border-radius: 22px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    background: var(--blue-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-img-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 980px) {
+    .hero-img-slot { height: 320px; }
+  }
+</style>
+
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>
