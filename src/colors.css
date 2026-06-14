@@ -1,27 +1,26 @@
 /* TigerTex Air — Color tokens
-   Cool Comfort: deep navy ink, cool blue primary (the "air"),
-   signal orange as the heat/CTA accent, ice-blue surfaces. */
+   Brand palette: dark navy #002B6B, sky blue #4E95D9, signal orange #FD4502 */
 :root {
   /* ── Base palette ── */
-  --navy-900: #0c1a30;   /* darkest — footer/CTA bands */
-  --navy-800: #0f1f3a;   /* primary ink */
-  --navy-700: #1a3253;
-  --slate-500: #5b6b82;  /* secondary text */
-  --slate-400: #8493a8;  /* muted text */
+  --navy-900: #001a42;   /* darkest — footer/CTA bands */
+  --navy-800: #002B6B;   /* primary ink / dark blue brand */
+  --navy-700: #003d96;
+  --slate-500: #4e6080;  /* secondary text */
+  --slate-400: #7d92ac;  /* muted text */
 
-  --blue-700: #1d4ed8;   /* primary pressed */
-  --blue-600: #2563eb;   /* primary brand — "cool/air" */
-  --blue-100: #e6f0ff;   /* blue tint surface */
-  --blue-50:  #f0f6ff;
+  --blue-700: #2e78c2;   /* primary pressed */
+  --blue-600: #4E95D9;   /* primary brand — "cool/air" */
+  --blue-100: #dceeff;   /* blue tint surface */
+  --blue-50:  #eef6ff;
 
-  --orange-600: #e8460c; /* heat pressed */
-  --orange-500: #ff5a1f; /* heat accent / CTA */
-  --orange-100: #ffe7dc; /* heat tint */
+  --orange-600: #d43800; /* heat pressed */
+  --orange-500: #FD4502; /* heat accent / CTA */
+  --orange-100: #ffe3d6; /* heat tint */
 
-  --ice-100: #f4f8fc;    /* page background */
+  --ice-100: #f3f7fc;    /* page background */
   --white:    #ffffff;
-  --line-200: #dbe6f2;   /* hairline borders */
-  --line-300: #c5d5e8;
+  --line-200: #d6e4f4;   /* hairline borders */
+  --line-300: #b8d1eb;
 
   --green-600: #1f9d57;  /* success / available */
   --amber-500: #f5a623;  /* rating stars */
@@ -29,14 +28,14 @@
 
   /* ── Semantic aliases ── */
   --bg-page: var(--ice-100);
-  --bg-dark: var(--navy-900);
+  --bg-dark: var(--navy-800);
   --surface-card: var(--white);
   --surface-tint: var(--blue-50);
 
   --text-strong: var(--navy-800);
-  --text-body: #2b3a52;
+  --text-body: #1e3256;
   --text-muted: var(--slate-500);
-  --text-on-dark: #e8f0fa;
+  --text-on-dark: #deeaf8;
   --text-on-accent: #ffffff;
 
   --brand-primary: var(--blue-600);
@@ -46,5 +45,5 @@
 
   --border: var(--line-200);
   --border-strong: var(--line-300);
-  --focus-ring: rgba(37, 99, 235, .35);
+  --focus-ring: rgba(78, 149, 217, .35);
 }
