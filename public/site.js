@@ -16,10 +16,15 @@
     const isOpen = open ?? !mnav.classList.contains('open');
     mnav.classList.toggle('open', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
-    if (burger) burger.setAttribute('aria-expanded', String(isOpen));
+    if (burger) {
+      burger.setAttribute('aria-expanded', String(isOpen));
+      burger.classList.toggle('is-open', isOpen);
+    }
   };
   burger && burger.addEventListener('click', () => toggleNav());
   mnav && mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleNav(false)));
+  const closeBtn = mnav && mnav.querySelector('.mobile-nav-close');
+  closeBtn && closeBtn.addEventListener('click', () => toggleNav(false));
 
   // ── Booking modal ──
   const overlay = document.querySelector('.modal-overlay');
